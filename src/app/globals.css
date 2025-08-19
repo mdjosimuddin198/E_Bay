@@ -1,4 +1,15 @@
 @import "tailwindcss";
+@plugin "daisyui";
+
+/* 1. Luxury Dark (Premium Look)
+
+Background: #0D0D0D (Deep Black)
+
+Primary: #D4AF37 (Luxury Gold)
+
+Accent: #C0C0C0 (Silver Gray)
+
+Text: #FFFFFF (White) */
 
 :root {
   --background: #ffffff;

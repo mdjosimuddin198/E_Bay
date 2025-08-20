@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
-import WatchesSection from "./components/WatchesSection/WatchesSection";
+import Hero from "./components/hero/Hero";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         </header>
         <main>{children}</main>
         <main>
-          <WatchesSection></WatchesSection>
+          <Hero></Hero>
         </main>
       </body>
     </html>

@@ -1,9 +1,10 @@
 import Link from "next/link";
 import React from "react";
+import { FaCartShopping, FaHeart } from "react-icons/fa6";
 
 const Navbar = () => {
   return (
-    <div className="navbar  shadow-sm">
+    <div className="navbar border-b shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,7 +32,13 @@ const Navbar = () => {
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/shop">Buy Watch</Link>
+              <Link href="/shop">Contact</Link>
+            </li>
+            <li>
+              <Link href="/shop">About</Link>
+            </li>
+            <li>
+              <Link href="/shop">Sign Up</Link>
             </li>
           </ul>
         </div>
@@ -43,12 +50,26 @@ const Navbar = () => {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/shop">Buy Watch</Link>
+            <Link href="/shop">Contact</Link>
+          </li>
+          <li>
+            <Link href="/shop">About</Link>
+          </li>
+          <li>
+            <Link href="/shop">Sign Up</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <ul className="flex items-center gap-4">
+          <input type="text" className="outline border" />
+          <li className="hover:cursor-pointer">
+            <FaHeart />
+          </li>
+          <li className="hover:cursor-pointer">
+            <FaCartShopping />
+          </li>
+        </ul>
       </div>
     </div>
   );

@@ -18,6 +18,13 @@ const Home = () => {
             match your lifestyle. <br /> From classic elegance to modern tech,
             our next-gen <br /> watches are built for trendsetters like you.
           </p>
+          <p className="text-2xl">
+            $800
+            <small>
+              {" "}
+              <s>$1500</s>
+            </small>
+          </p>
           <button className="btn btn-primary">Get Started</button>
         </div>
       </div>

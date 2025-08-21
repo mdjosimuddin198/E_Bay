@@ -62,7 +62,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <ul className="flex items-center gap-4">
-          <input type="text" className="outline border" />
+          {/* <input type="text" className="outline border" /> */}
           <li className="hover:cursor-pointer">
             <FaHeart />
           </li>

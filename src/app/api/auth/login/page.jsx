@@ -12,6 +12,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { signIn } from "next-auth/react";
+import { toast } from "react-toastify";
 
 export default function LoginPage() {
   const [showPass, setShowPass] = useState(false);
@@ -22,7 +23,7 @@ export default function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // setLoading(true);
-    alert("sorry not working");
+    toast.error("Working with it — please use the Google Sign-In option.");
     // try {
     //   await signIn("credentials", {
     //     redirect: true,
@@ -207,23 +208,23 @@ export default function LoginPage() {
               </div>
 
               {/* Social Auth */}
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-3 ">
                 <button
                   type="button"
                   onClick={() => signIn("google")}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-100 transition hover:bg-white/10"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-100 transition hover:bg-white/10"
                 >
                   <Chrome className="h-4 w-4" />
                   Sign in with Google
                 </button>
-                <button
+                {/* <button
                   type="button"
                   onClick={() => signIn("github")}
                   className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-100 transition hover:bg-white/10"
                 >
                   <Github className="h-4 w-4" />
                   Sign in with GitHub
-                </button>
+                </button> */}
               </div>
 
               {/* Footer */}

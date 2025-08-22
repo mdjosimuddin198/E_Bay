@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+GitHub Repository Structure (Watch Store)
+E_Bay/
+├─src/
+├─ app/
+├─api/auth
+│ ├─ layout.js
+│ ├─ page.js
+│ ├─ not-found.js
+│ └─ products/
+│ └─ page.js
+└─ globals.css
+├─Images  
+├─ public/
+│
+├─ package.json
+├─
+├─ next.config.js
+└─ README.md
 
-## Getting Started
+README.md (Watch Store)
 
-First, run the development server:
+# Watch Store
+
+## 🔗 Live Site
+
+[View Live Site](https://e-bay-topaz.vercel.app)
+
+## 📂 GitHub Repository
+
+[GitHub Repository](https://github.com/mdjosimuddin198/E_Bay)
+
+---
+
+## 💡 Project Description
+
+**Electronics Store** is a modern **Next.js** web application for showcasing and selling watches and other electronics item .  
+Features include:
+
+- Full **Dark Mode** support
+- Custom 404 page
+- Responsive design for mobile and desktop
+- User authentication with **NextAuth.js**
+- Product listing with details and images
+- Clean Tailwind + DaisyUI design
+  -user can add an products
+
+---
+
+## ⚙️ Setup & Installation
+
+1. **Clone the repository:**
 
 ```bash
+git clone https://github.com/yourusername/watch-store.git
+
+
+Navigate to the project folder:
+
+cd watch-store
+
+
+Install dependencies:
+
+npm install
+
+
+Create a .env.local file in the root directory and add the following environment variables:
+
+NEXTAUTH_URL=https://e-bay-topaz.vercel.app
+NEXTAUTH_SECRET=your_secret_key
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+BACKEND_URL=https://your-backend-api.com
+
+
+Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+
+Open http://localhost:3000
+ to view the app.
+
+🗺 Route Summary
+Route	Description
+/	Home Page
+/products	Products listing page
+/about	About Page (optional)
+/contact	Contact Page (optional)
+/404	Custom 404 Page
+/api/auth/*	NextAuth.js API Routes
+📦 Technologies Used
+
+Next.js
+
+Tailwind CSS
+
+DaisyUI
+
+React
+
+Node.js & Express (Backend)
+
+MongoDB (Database)
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

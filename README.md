@@ -19,7 +19,7 @@ E_Bay/
 
 README.md (Watch Store)
 
-# Watch Store
+# E Bay
 
 ## 🔗 Live Site
 

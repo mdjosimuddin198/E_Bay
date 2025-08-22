@@ -58,7 +58,7 @@ export default function LoginPage() {
                 <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-cyan-500 p-[2px]">
                   <div className="h-full w-full rounded-[14px] bg-slate-950/90 grid place-items-center">
                     <span className="text-lg font-black tracking-widest">
-                      W.S
+                      E_B
                     </span>
                   </div>
                 </div>

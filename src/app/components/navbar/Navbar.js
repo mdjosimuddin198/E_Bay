@@ -37,10 +37,18 @@ const Navbar = () => {
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/shop">Contact</Link>
+              <Link href="/products">products</Link>
+            </li>
+            {session && (
+              <li>
+                <Link href="/dashboard/addProducts">Add Products</Link>
+              </li>
+            )}
+            <li>
+              <Link href="/contact">Contact</Link>
             </li>
             <li>
-              <Link href="/shop">About</Link>
+              <Link href="/about">About</Link>
             </li>
           </ul>
         </div>
@@ -53,6 +61,14 @@ const Navbar = () => {
           <li>
             <Link href="/">Home</Link>
           </li>
+          <li>
+            <Link href="/products">products</Link>
+          </li>
+          {session && (
+            <li>
+              <Link href="/dashboard/addProducts">Add Products</Link>
+            </li>
+          )}
           <li>
             <Link href="/shop">Contact</Link>
           </li>

@@ -14,6 +14,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Hero from "./components/hero/Hero";
 import FlashSales from "./components/flashSales/FlashSales";
+import Footer from "./components/footer/Footer";
 
 // slider data
 const slides = [
@@ -128,6 +129,7 @@ const Home = () => {
       <main>
         <Hero></Hero>
         <FlashSales></FlashSales>
+        <Footer></Footer>
       </main>
     </>
   );

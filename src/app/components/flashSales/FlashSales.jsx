@@ -5,131 +5,148 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { FaHeart, FaEye, FaStar } from "react-icons/fa";
+import Link from "next/link";
 
-const products = [
-  {
-    id: 1,
-    name: "HAVIT HV-G92 Gamepad",
-    image: "https://i.ibb.co.com/DPX2VD7W/image.png",
-    discount: 40,
-    price: 120,
-    oldPrice: 160,
-    rating: 4.5,
-    reviews: 88,
-  },
-  {
-    id: 2,
-    name: "AK-900 Wired Keyboard",
-    image: "https://i.ibb.co.com/5hSzNpv4/image.png",
-    discount: 35,
-    price: 960,
-    oldPrice: 1160,
-    rating: 4,
-    reviews: 75,
-  },
-  {
-    id: 3,
-    name: "IPS LCD Gaming Monitor",
-    image: "https://i.ibb.co.com/27hydhgg/image.png",
-    discount: 30,
-    price: 370,
-    oldPrice: 490,
-    rating: 4.5,
-    reviews: 99,
-  },
-  {
-    id: 4,
-    name: "S-Series Comfort Chair",
-    image: "https://i.ibb.co.com/TxBrC033/image.png",
-    discount: 25,
-    price: 375,
-    oldPrice: 500,
-    rating: 4.5,
-    reviews: 99,
-  },
-  {
-    id: 5,
-    name: "Wireless Mouse",
-    image: "https://i.ibb.co.com/KpJsLk7N/image.png",
-    discount: 20,
-    price: 40,
-    oldPrice: 50,
-    rating: 4.2,
-    reviews: 67,
-  },
-  {
-    id: 6,
-    name: "Mechanical Keyboard",
-    image: "https://i.ibb.co.com/GfLWNFkX/image.png",
-    discount: 15,
-    price: 110,
-    oldPrice: 130,
-    rating: 4.6,
-    reviews: 123,
-  },
-  {
-    id: 7,
-    name: "Gaming Laptop",
-    image: "https://i.ibb.co.com/Kp9wNSbD/image.png",
-    discount: 18,
-    price: 1200,
-    oldPrice: 1450,
-    rating: 4.7,
-    reviews: 210,
-  },
-  {
-    id: 8,
-    name: "Bluetooth Headset",
-    image: "https://i.ibb.co.com/4w2VBLGq/image.png",
-    discount: 25,
-    price: 85,
-    oldPrice: 115,
-    rating: 4.3,
-    reviews: 150,
-  },
-  {
-    id: 9,
-    name: "Smartwatch Pro",
-    image: "https://i.ibb.co.com/hF6TvqK9/image.png",
-    discount: 22,
-    price: 150,
-    oldPrice: 190,
-    rating: 4.4,
-    reviews: 190,
-  },
-  {
-    id: 10,
-    name: "Portable Speaker",
-    image: "https://i.ibb.co.com/bMB76mrv/image.png",
-    discount: 30,
-    price: 70,
-    oldPrice: 100,
-    rating: 4.1,
-    reviews: 84,
-  },
-  {
-    id: 11,
-    name: "Drone Camera",
-    image: "https://i.ibb.co.com/Cs8Kvqtf/image.png",
-    discount: 28,
-    price: 550,
-    oldPrice: 750,
-    rating: 4.6,
-    reviews: 95,
-  },
-  {
-    id: 12,
-    name: "DSLR Camera",
-    image: "https://i.ibb.co.com/m5q5vHWJ/image.png",
-    discount: 20,
-    price: 890,
-    oldPrice: 1100,
-    rating: 4.8,
-    reviews: 175,
-  },
-];
+// const products = [
+//   {
+//     id: 1,
+//     name: "HAVIT HV-G92 Gamepad",
+//     image: "https://i.ibb.co.com/DPX2VD7W/image.png",
+//     discount: 40,
+//     price: 120,
+//     oldPrice: 160,
+//     rating: 4.5,
+//     reviews: 88,
+//   },
+//   {
+//     id: 2,
+//     name: "AK-900 Wired Keyboard",
+//     image: "https://i.ibb.co.com/5hSzNpv4/image.png",
+//     discount: 35,
+//     price: 960,
+//     oldPrice: 1160,
+//     rating: 4,
+//     reviews: 75,
+//   },
+//   {
+//     id: 3,
+//     name: "IPS LCD Gaming Monitor",
+//     image: "https://i.ibb.co.com/27hydhgg/image.png",
+//     discount: 30,
+//     price: 370,
+//     oldPrice: 490,
+//     rating: 4.5,
+//     reviews: 99,
+//   },
+//   {
+//     id: 4,
+//     name: "S-Series Comfort Chair",
+//     image: "https://i.ibb.co.com/TxBrC033/image.png",
+//     discount: 25,
+//     price: 375,
+//     oldPrice: 500,
+//     rating: 4.5,
+//     reviews: 99,
+//   },
+//   {
+//     id: 5,
+//     name: "Wireless Mouse",
+//     image: "https://i.ibb.co.com/KpJsLk7N/image.png",
+//     discount: 20,
+//     price: 40,
+//     oldPrice: 50,
+//     rating: 4.2,
+//     reviews: 67,
+//   },
+//   {
+//     id: 6,
+//     name: "Mechanical Keyboard",
+//     image: "https://i.ibb.co.com/GfLWNFkX/image.png",
+//     discount: 15,
+//     price: 110,
+//     oldPrice: 130,
+//     rating: 4.6,
+//     reviews: 123,
+//   },
+//   {
+//     id: 7,
+//     name: "Gaming Laptop",
+//     image: "https://i.ibb.co.com/Kp9wNSbD/image.png",
+//     discount: 18,
+//     price: 1200,
+//     oldPrice: 1450,
+//     rating: 4.7,
+//     reviews: 210,
+//   },
+//   {
+//     id: 8,
+//     name: "Bluetooth Headset",
+//     image: "https://i.ibb.co.com/4w2VBLGq/image.png",
+//     discount: 25,
+//     price: 85,
+//     oldPrice: 115,
+//     rating: 4.3,
+//     reviews: 150,
+//   },
+//   {
+//     id: 9,
+//     name: "Smartwatch Pro",
+//     image: "https://i.ibb.co.com/hF6TvqK9/image.png",
+//     discount: 22,
+//     price: 150,
+//     oldPrice: 190,
+//     rating: 4.4,
+//     reviews: 190,
+//   },
+//   {
+//     id: 10,
+//     name: "Portable Speaker",
+//     image: "https://i.ibb.co.com/bMB76mrv/image.png",
+//     discount: 30,
+//     price: 70,
+//     oldPrice: 100,
+//     rating: 4.1,
+//     reviews: 84,
+//   },
+//   {
+//     id: 11,
+//     name: "Drone Camera",
+//     image: "https://i.ibb.co.com/Cs8Kvqtf/image.png",
+//     discount: 28,
+//     price: 550,
+//     oldPrice: 750,
+//     rating: 4.6,
+//     reviews: 95,
+//   },
+//   {
+//     id: 12,
+//     name: "DSLR Camera",
+//     image: "https://i.ibb.co.com/m5q5vHWJ/image.png",
+//     discount: 20,
+//     price: 890,
+//     oldPrice: 1100,
+//     rating: 4.8,
+//     reviews: 175,
+//   },
+// ];
 
 const FlashSales = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    // async function declare
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch("http://localhost:5000/products");
+        const data = await res.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+      }
+    };
+
+    // call the async function
+    fetchProducts();
+  }, []);
   // Countdown Timer
   const [timeLeft, setTimeLeft] = useState({
     days: 3,
@@ -262,10 +279,12 @@ const FlashSales = () => {
                 </span>
               </div>
 
-              {/* Add to Cart Button (hover) */}
-              <button className="mt-4 w-full btn btn-accent text-white py-2 rounded opacity-0 group-hover:opacity-100 transition">
-                Add To Cart
-              </button>
+              <Link
+                href={`/products/${product._id}`}
+                className="mt-4 w-full btn btn-accent text-white py-2 rounded opacity-0 group-hover:opacity-100 transition"
+              >
+                View More
+              </Link>
             </div>
           </SwiperSlide>
         ))}

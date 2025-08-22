@@ -1,10 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import { FaCartShopping, FaHeart } from "react-icons/fa6";
+import { useSession, signOut } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session } = useSession();
+
   return (
-    <div className="navbar border-b shadow-sm">
+    <div className="navbar border-b  shadow-sm px-4">
+      {/* Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -15,13 +21,12 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              {" "}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              />
             </svg>
           </div>
           <ul
@@ -37,13 +42,12 @@ const Navbar = () => {
             <li>
               <Link href="/shop">About</Link>
             </li>
-            <li>
-              <Link href="/shop">Sign Up</Link>
-            </li>
           </ul>
         </div>
-        <a className=" text-xl">Watch Store</a>
+        <a className="text-xl font-bold">E_Bay</a>
       </div>
+
+      {/* Navbar Center */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
@@ -55,21 +59,37 @@ const Navbar = () => {
           <li>
             <Link href="/shop">About</Link>
           </li>
-          <li>
-            <Link href="/shop">Sign Up</Link>
-          </li>
         </ul>
       </div>
-      <div className="navbar-end">
-        <ul className="flex items-center gap-4">
-          {/* <input type="text" className="outline border" /> */}
-          <li className="hover:cursor-pointer">
-            <FaHeart />
+
+      {/* Navbar End */}
+      <div className="navbar-end flex items-center gap-4">
+        {/* <FaHeart className="hover:cursor-pointer" />
+        <FaCartShopping className="hover:cursor-pointer" /> */}
+
+        {session && (
+          <div className="flex items-center gap-2 ml-4">
+            {session.user.image && (
+              <img
+                src={session.user.image}
+                alt="Profile"
+                className="w-8 h-8 rounded-full"
+              />
+            )}
+            <span className="hidden md:inline">{session.user.name}</span>
+            <button
+              onClick={() => signOut({ callbackUrl: "/" })}
+              className="px-2 py-1 bg-red-500 text-white rounded"
+            >
+              Logout
+            </button>
+          </div>
+        )}
+        {!session && (
+          <li className="btn btn-accent px-8 rounded-xl py-1">
+            <Link href="/api/auth/login">Log In</Link>
           </li>
-          <li className="hover:cursor-pointer">
-            <FaCartShopping />
-          </li>
-        </ul>
+        )}
       </div>
     </div>
   );

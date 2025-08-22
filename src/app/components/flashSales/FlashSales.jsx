@@ -233,7 +233,7 @@ const FlashSales = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-40 object-contain"
+                className="w-full   h-40 object-contain"
               />
 
               {/* Product Info */}

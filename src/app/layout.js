@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+import Providers from "./components/providers/Providers";
 import Navbar from "./components/navbar/Navbar";
-import Hero from "./components/hero/Hero";
-import FlashSales from "./components/flashSales/FlashSales";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,14 +25,28 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header>
-          <Navbar></Navbar>
-        </header>
-        <main>{children}</main>
-        <main>
-          <Hero></Hero>
-          <FlashSales></FlashSales>
-        </main>
+        {/* Background */}
+        <div className="relative min-h-screen overflow-hidden bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black text-slate-100">
+          {/* Glow orbs */}
+          <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-fuchsia-500/20 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-20 -right-20 h-96 w-96 rounded-full bg-cyan-500/20 blur-3xl" />
+
+          {/* Grid shimmer */}
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0,transparent_95%,rgba(255,255,255,.05)_95%),linear-gradient(to_bottom,transparent_0,transparent_95%,rgba(255,255,255,.05)_95%)] bg-[size:32px_32px]"
+          />
+
+          {/* Content */}
+          <div className="relative z-10">
+            <Providers>
+              <header className="sticky top-0 z-50 ">
+                <Navbar />
+              </header>
+              <main>{children}</main>
+            </Providers>
+          </div>
+        </div>
       </body>
     </html>
   );

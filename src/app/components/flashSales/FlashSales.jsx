@@ -136,7 +136,7 @@ const FlashSales = () => {
     // async function declare
     const fetchProducts = async () => {
       try {
-        const res = await fetch("http://localhost:5000/products");
+        const res = await fetch("https://e-bay-server.vercel.app/products");
         const data = await res.json();
         setProducts(data);
       } catch (error) {
